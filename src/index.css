@@ -1,0 +1,52 @@
+  @tailwind base;
+  @tailwind components;
+  @tailwind utilities;
+
+  .slick-dots li button:before {
+    font-family: 'slick';
+    font-size: 12px; /* Font boyutunu artırın */
+    line-height: 24px; /* Line height'i artırın */
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 24px; /* Genişliği artırın */
+    height: 24px; /* Yüksekliği artırın */
+    content: '•';
+    text-align: center;
+    opacity: .25;
+    color: black; /* Rengi değiştirin */
+ 
+}
+
+.section {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.section.animate {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.image-container {
+  opacity: 0;
+  transform: translateX(-50px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.text-container {
+  opacity: 0;
+  transform: translateX(50px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.section.animate .image-container,
+.section.animate .text-container {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+body {
+  overflow-x: hidden;
+}
